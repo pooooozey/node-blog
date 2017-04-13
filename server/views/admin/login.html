@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="/public/admin/css/cms.css">
+
+	</head>
+	<body>
+		<div id="login-box">
+			<div class="row"><input type="text" placeholder="用户名" name="username" class="ipt"></div>
+			<div class="row"><input type="password" placeholder="密码" name="password" class="ipt"></div>
+			<div class="row"><input type="password" placeholder="暗码" name="code" class="ipt"></div>
+			<div class="row tc"><input type="button" class="btn" value="登录"></div>
+			<div class="err"></div>
+		</div>
+
+
+		<script type="text/javascript" src="/public/admin/js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="/public/admin/js/main.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var $loginBox = $("#login-box");
+
+				$loginBox.find(".btn").click(function(){
+					$.ajax({
+						type : 'post',
+						url : 'api/user/login',
+						data : {
+							username : $loginBox.find('[name="username"]').val(),
+							password : $loginBox.find('[name="password"]').val(),
+							code : $loginBox.find('[name="code"]').val()
+						},
+						dataType : 'json',
+						success : function(result){
+							$loginBox.find(".err").html(result.message);
+							if(result.code === 0){
+								//登录成功
+								window.location = 'cms';
+							}
+						}
+					});
+				});
+				
+			});
+		</script>
+	</body>
+</html>

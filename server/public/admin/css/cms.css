@@ -1,0 +1,38 @@
+a:active {outline: none;star:expression(this.onFocus=this.blur());}
+*{margin:0;padding:0;list-style:none;outline:none;word-wrap:break-word;}
+img{border:none}
+table{table-layout:fixed; border-collapse:collapse}
+a{ text-decoration:none;}
+.fb{ font-weight:bold;}
+body{ font-size:12px; font-family:Arial,"宋体";}
+.tc{ text-align:center;}
+.hide{
+	display:none;
+}
+
+#login-box{
+	width:240px;
+	margin:0 0 0 -120px;
+	position:absolute;
+	left:50%;
+	top:30%;
+}
+#login-box .row{
+	margin:0 0 10px 0;
+}
+#login-box .ipt{
+	width:100%;
+	text-indent:10px;
+	border:1px solid #999;
+	height:30px;
+}
+#login-box .btn{
+	width:100%;
+	height:34px;
+	border:0;
+	background:#1c7cff;
+	color:#fff;
+}
+#login-box .err{
+	color:#ca0606;
+}
